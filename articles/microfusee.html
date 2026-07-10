@@ -7,81 +7,244 @@
 
     <title>Apollon - Microfusées</title>
 
+    <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/articles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <header>
-        <a href = "../index.html" class="logo">
+        <button class="burger">
+            ☰
+        </button>
+
+        <a href="../index.html" class="logo">
             Apollon
         </a>
+
         <nav>
             <a href="../about.html">À propos</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <div class="body">
-        <div class="titre">
-            <h1>
-                Microfusées
-            </h1>
-            <p>Definition, Conception et Réalisation</p>
-        </div>
+    <aside class="sidebar">
         <nav class="sommaire">
+            <h2>Sommaire</h2>
             <ul>
-                <li>Définition</li>
-                <li>Classification</li>
-                <li>Loi Française</li>
-                <li>Classification des moteurs</li>
-                <ul>
-                    <li>Formation pyrotechnique</li>
-                    <li>Raketenmodellbau</li>
-                </ul>
                 <li>
-                    Notions de stabilité
+                    <a href="#definition">Définition</a>
                 </li>
-                <ul>
-                    <li>Ailerons</li>
-                    <li>Thrust vectoring</li>
-                </ul>
-                <li>Composants de base</li>
-                <ul>
-                    <li>Ogive</li>
-                    <li>Peau porteuse / Treillis porteur</li>
-                    <li>Parachute/Rubalise</li>
-                    <li>Moteur</li>
-                    <li>Minuterie</li>
-                    <li>Ailerons</li>
-                    <li>Centre de masse</li>
-                </ul>
-                <li>Fusée à dépotage</li>
-                <li>Cahier des charges</li>
-                <ul>
-                    <li>Flèche</li>
-                    <li>Terrain d'astromodélisme</li>
-                    <ul>
-                        <li>Plafond</li>
-                        <li>NOTAM</li>
-                        <li>Espace libre</li>
-                        <li>Nuit aéronautique</li>
+                <li>
+                    <a href="#classification">Classification</a>
+                </li>
+                <li>
+                    <a href="#loi">Loi Française</a>
+                </li>
+                <li>
+                    <a href="#moteurs">Classification des moteurs</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#formation">Formation pyrotechnique</a>
+                        </li>
+                        <li>
+                            <a href="#raketen">Raketenmodellbau</a>
+                        </li>
                     </ul>
-                    <li>Autre</li>
-                </ul>
-                <li>Expériences</li>
-                <li>Bonnes pratiques</li>
+                </li>
+                <li>
+                    <a href="#stabilite">Notions de stabilité</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#ailerons">Ailerons</a>
+                        </li>
+                        <li>
+                            <a href="#thrust">Thrust vectoring</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#composants">Composants de base</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#ogive">Ogive</a>
+                        </li>
+                        <li>
+                            <a href="#peau">Peau porteuse / Treillis porteur</a>
+                        </li>
+                        <li>
+                            <a href="#parachute">Parachute / Rubalise</a>
+                        </li>
+                        <li>
+                            <a href="#moteur">Moteur</a>
+                        </li>
+                        <li>
+                            <a href="#minuterie">Minuterie</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#depotage">Fusée à dépotage</a>
+                </li>
+                <li>
+                    <a href="#cahier">Cahier des charges</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#fleche">Flèche</a>
+                        </li>
+                        <li>
+                            <a href="#terrain">Terrain d'astromodélisme</a>
+                            <ul class="sous-sous-section">
+                                <li>
+                                    <a href="#plafond">Plafond</a>
+                                </li>
+                                <li>
+                                    <a href="#notam">NOTAM</a>
+                                </li>
+                                <li>
+                                    <a href="#espace">Espace libre</a>
+                                </li>
+                                <li>
+                                    <a href="#nuit">Nuit aéronautique</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#experiences">Expériences</a>
+                </li>
+                <li>
+                    <a href="#pratiques">Bonnes pratiques</a>
+                </li>
             </ul>
         </nav>
-    </div>
+    </aside>
+
+    <main>
+        <article>
+            <div class="titre">
+                <h1>Microfusées</h1>
+                <p>Définition, Conception et Réalisation</p>
+            </div>
+
+            <section id="definition">
+                <h2>Définition</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="classification">
+                <h2>Classification</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="loi">
+                <h2>Loi Française</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="moteurs">
+                <h2>Classification des moteurs</h2>
+                <section id="formation">
+                    <h3>Formation pyrotechnique
+                    </h3>
+                    <p>
+                        lorem ipsum
+                    </p>
+                </section>
+
+                <section id="raketen">
+                    <h3>Raketenmodellbau</h3>
+                    <p>
+                        lorem ipsum
+                    </p>
+                </section>
+            </section>
+
+            <section id="stabilite">
+                <h2>Notions de stabilité</h2>
+                <p>
+                    lorem ipsum
+                </p>
+
+                <section id="ailerons">
+                    <h3>Ailerons</h3>
+                    <p>
+                        lorem ipsum
+                    </p>
+                </section>
+
+                <section id="thrust">
+                    <h3>Thrust vectoring</h3>
+                    <p>
+                        lorem ipsum
+                    </p>
+                </section>
+            </section>
+
+            <section id="composants">
+                <h2>Composants de base</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="depotage">
+                <h2>Fusée à dépotage</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="cahier">
+                <h2>Cahier des charges</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="experiences">
+                <h2>Expériences</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+
+            <section id="pratiques">
+                <h2>Bonnes pratiques</h2>
+                <p>
+                    lorem ipsum
+                </p>
+            </section>
+        </article>
+    </main>
 
     <footer>
         <p>© 2026</p>
         <p>Charlize CARON</p>
     </footer>
+
+    <script>
+    const burger = document.querySelector(".burger");
+    const sidebar = document.querySelector(".sidebar");
+
+
+    burger.addEventListener("click", () => {
+
+        sidebar.classList.toggle("active");
+
+    });
+    </script>
 </body>
 
 </html>
