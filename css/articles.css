@@ -227,7 +227,7 @@ article{
 ========================= */
 
 section{
-    padding:var(--spacing-l) 0;
+    padding:var(--spacing-s) 0;
     scroll-margin-top:110px;
 }
 
@@ -260,6 +260,8 @@ section p{
     margin-bottom:18px;
     color:#d8d8df;
     line-height:1.9;
+    text-align: justify;
+    text-indent: 30px;
 }
 
 strong{
@@ -316,6 +318,12 @@ figure img{
 
     border-radius:var(--radius-large);
     border:1px solid var(--border);
+}
+.small_img{
+    width:20%;
+}
+.medium_img{
+    width:60%;
 }
 
 figcaption{
@@ -473,6 +481,15 @@ hr{
 
 ::-webkit-scrollbar-thumb:hover{
     background:#444452;
+}
+
+
+/* =========================
+   TODO
+========================= */
+
+todo{
+    color:red;
 }
 
 

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apollon - Microfusées</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/articles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <button class="burger">
+            ☰
+        </button>
+
+        <a href="../index.html" class="logo">
+            Apollon
+        </a>
+
+        <nav>
+            <a href="../about.html">À propos</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar">
+        <nav class="sommaire">
+            <h2>Sommaire</h2>
+            <ul>
+                <li>
+                    <a href="#introduction">Introduction</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#additiveVSsoustractive">Fabrication additive vs soustractive</a>
+                        </li>
+                        <li>
+                            <a href="#additivedeveloppe">Les différentes technologies de fabrication additive</a>
+                            <ul class="sous-sous-section">
+                                <li>
+                                    <a href="#FDM/FFF">FDM/FFF</a>
+                                </li>
+                                <li>
+                                    <a href="#SLA/DLP">SLA/DLP</a>
+                                </li>
+                                <li>
+                                    <a href="#SLS">SLS</a>
+                                </li>
+                                <li>
+                                    <a href="#autrestech">Autres</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#imprimantesFDM">Les imprimantes FDM/FFF (focus sur P1S/P1P)</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="Principe">Principe de fonctionnement</a>
+                        </li>
+                        <li>
+                            <a href="#Caracteristiques">Caractéristiques principales d'une P1S</a>
+                        </li>
+                        <li>
+                            <a href="#Avantages">Avantages spécifiques de la P1S</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Materiaux">Les matériaux imprimables en FDM</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#PLA"></a>
+                        </li>
+                        <li>
+                            <a href="#LW-PLA">LW-PLA</a>
+                        </li>
+                        <li>
+                            <a href="#PETG">PETG</a>
+                        </li>
+                        <li>
+                            <a href="#ABS/ASA">ABS/ASA</a>
+                        </li>
+                        <li>
+                            <a href="#TPU">TPU</a>
+                        </li>
+                        <li>
+                            <a href="#Composites">Composites</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#Tuto">Procédure d'impression simple</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#STL">Préparation du fichier STL</a>
+                        </li>
+                        <li>
+                            <a href="#imprimante">Préparation de l'imprimante</a>
+                        </li>
+                        <li>
+                            <a href="#posttraitement">Post-traitement</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#autresfilaments">Impressions avec d'autres filaments</a>
+                    <ul class="sous-section"> 
+                        <li>
+                            <a href="#LW-PLA2">LW-PLA</a>
+                        </li>
+                        <li>
+                            <a href="#ABS/ASA2">ABS/ASA</a>
+                        </li>
+                        <li>
+                            <a href="#TPU2">TPU</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#AMS">AMS - Automated Material System</a>
+                </li>
+                <li>
+                    <a href="#BonnesPratiques">Bonnes Pratiques & Sécurité</a>
+                </li>
+                <li>
+                    <a href="#Depannage">Dépannage courant</a>
+                    <ul class="sous-section">
+                        <li>
+                            <a href="#Warping">Warping</a>
+                        </li>
+                        <li>
+                            <a href="#Decollement">Décollement</a>
+                        </li>
+                        <li>
+                            <a href="#BuseBouchee">Buse bouchée</a>
+                        </li>
+                        <li>
+                            <a href="#Noeud">Bobine emmêlée</a>
+                        </li>
+                        <li>
+                            <a href="#Stringing">Stringing</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ChangerFilament">Changer le filament</a>
+                </li>
+                <li>
+                    <a href="#Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <article>
+            <div class="titre">
+                <h1>Impression 3D</h1>
+            </div>
+
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <section id="additiveVSsoustractive">
+                    <h3>La fabrication additive vs soustractive</h3>
+                    <p>
+                        La fabrication additive, dont l'impression 3D, est la forme la plus répandue, désigne 
+                        un ensemble de procédés consistant à créer un objet <em>par ajout de matière 
+                        couche par couche</em> à partir d'un modèle numérique. Cette approche s'oppose 
+                        aux méthodes traditionnelles dites <em>soustractives</em>, comme l'usinage, 
+                        qui consistent à retirer de la matière d'un bloc initial (bois, métal, plastique) 
+                        jusqu'à obtenir la forme souhaitée. Alors que la fabrication soustractive génère 
+                        souvent une quantité importante de déchets et nécessite des outillages spécialisés, 
+                        la fabrication additive permet d'optimiser l'utilisation de la matière, de réduire 
+                        les pertes et de fabriquer des formes complexes, difficiles voire impossibles, à 
+                        produire par des moyens conventionnels. Néanmoins, la fabrication additive présente 
+                        aussi des limites, notamment en termes de vitesse de production, de rugosité de surface 
+                        et de performances mécaniques des pièces obtenues. 
+                        <br> <br>
+                        Sur le plan économique, la fabrication additive est généralement plus abordable en termes 
+                        d'investissement initial : une imprimante 3D de bureau performante est accessible dès 
+                        quelques centaines d'euros et même les modèles semi-professionnels restent dans une 
+                        gamme de prix comprise entre 1 000 et 5 000 €. Le coût des matériaux (filaments, résines, 
+                        poudres) est relativement faible à l'échelle d'une pièce, ce qui en fait une solution 
+                        idéale pour le prototypage et les petites séries. À l'inverse, la fabrication soustractive 
+                        nécessite des équipements onéreux tels que des fraiseuses CNC, dont le prix peut 
+                        rapidement atteindre plusieurs dizaines de milliers d'euros, sans compter l'outillage 
+                        spécialisé. Toutefois, pour la production en grande série, l'usinage reste souvent plus 
+                        rentable grâce à sa rapidité et sa reproductibilité.
+                    </p>
+                    <todo>insérer image<br>insérer tableau</todo>
+                </section>
+
+                <section id="additivedeveloppe">
+                    <section id="FDM/FFF">
+                        <h4>FDM/FFF</h4>
+                        <p>
+                            C'est la technologie la plus répandue dans l'impression 3D de bureau. Elle consiste à 
+                            faire fondre un filament thermoplastique (PLA, PETG, ABS…) et à l'extruder couche par 
+                            couche pour former la pièce. Les imprimantes FDM, Fused Deposition Modelling, sont 
+                            abordables, simples à utiliser et adaptées au prototypage comme à la production de 
+                            petites séries. Les limites principales concernent la précision, la finition de 
+                            surface et la résistance mécanique, qui dépend de l'orientation des couches. 
+                            <br><todo>insérer image</todo>
+                        </p>
+                    </section>
+                    <section id="SLA/DLP">
+                        <h4>SLA/DLP</h4>
+                        <p>
+                            Ces procédés utilisent une résine liquide photosensible, solidifiée par une source de 
+                            lumière (laser pour le SLA, projecteur pour le DLP). Ils offrent une très grande précision 
+                            et une excellente qualité de surface, idéales pour le maquettisme ou la fabrication de 
+                            pièces détaillées. De plus, certaines résines permettent une utilisation dans le domaine 
+                            du médical. En revanche, les résines peuvent être coûteuses, fragiles et nécessitent un 
+                            post-traitement (nettoyage, polymérisation UV). Par ailleurs, elles sont souvent toxiques, 
+                            demandant une ventilation adaptée et éventuellement le port d'EPIs.
+                            <br><todo>insérer image</todo>
+                        </p>
+                    </section>
+                    <section id="SLS">
+                        <h4>SLS</h4>
+                        <p>
+                            Le frittage sélectif par laser repose sur l'agglomération de poudre thermoplastique 
+                            (souvent du nylon) grâce à un laser. Cette technologie permet d'obtenir des pièces robustes, 
+                            isotropes et sans besoin de supports, ce qui autorise des géométries très complexes. Le SLS 
+                            est largement utilisé en aéronautique, automobile et dans la fabrication de pièces 
+                            fonctionnelles. Son principal inconvénient est le coût élevé des machines et des installations.
+                            <br><todo>insérer image</todo>
+                        </p>
+                    </section>
+                    <section id="autrestech">
+                        <h4>Autres</h4>
+                        <p>
+                            SLM / DMLS : Ces procédés consistent à fondre ou fritter de la poudre métallique à l'aide d'un
+                            laser. Ils permettent de fabriquer directement des pièces en métal (titane, aluminium, acier, 
+                            cobalt-chrome) avec des formes complexes et des propriétés mécaniques proches des pièces usinées. 
+                            Ces technologies sont utilisées dans l'aéronautique, le médical ou l'outillage hautes performances, 
+                            mais leur coût reste très élevé et nécessite un environnement industriel spécialisé.
+                            <br><todo>insérer image</todo>
+                        </p>
+                    </section>
+                </section>
+            </section>
+                <section id="imprimantesFDM">
+                    <h2>Les imprimantes FDM/FFF (focus sur P1P/P1S)</h2>
+                    <section id="Principe">
+                        <h3>Principe de fonctionnement</h3>
+                        <p>
+                            La technologie FDM (Fused Deposition Modeling) repose sur le principe du dépôt de matière fondue. 
+                            Elle consiste à utiliser un filament thermoplastique, tel que le PLA, le PETG ou l'ABS, qui est 
+                            chauffé jusqu'à son point de fusion, puis déposé de manière contrôlée afin de fabriquer une 
+                            pièce en trois dimensions.
+                            <br><br>
+                            Concrètement, le filament plastique est entraîné mécaniquement vers une buse d'extrusion portée 
+                            à haute température. Au contact de cette buse chauffée, le matériau fond et devient semi-liquide. 
+                            Il est ensuite extrudé avec précision à travers l'orifice de la buse, qui se déplace selon des 
+                            trajectoires définies pour dessiner la géométrie de la pièce. L'objet est construit couche par 
+                            couche sur un plateau d'impression, généralement chauffant afin d'améliorer l'adhérence et de 
+                            limiter les déformations. Chaque couche déposée se solidifie rapidement en refroidissant, ce qui 
+                            permet de supporter la couche suivante. La superposition successive de ces couches aboutit à la 
+                            création d'une pièce finale solide et fonctionnelle.
+                            <br><todo>insérer image</todo>
+                            <br>
+                            En amont de l'impression, la pièce doit être modélisée à l'aide d'un logiciel de conception 
+                            assistée par ordinateur (CAO). Le modèle 3D est ensuite traité dans un logiciel de “slicing” 
+                            (tranchage), qui convertit l'objet en une succession de couches et génère un fichier 
+                            d'instructions (généralement au format G-code) destiné à piloter les mouvements de l'imprimante 
+                            3D ainsi que les paramètres d'extrusion. 
+                            <br><br>
+                            Enfin, certaines imprimantes 3D modernes permettent le changement de filament en cours d'impression. 
+                            Cela peut se faire via l'utilisation de plusieurs têtes d'impression ou grâce à un système de 
+                            gestion automatique des matériaux (AMS).
+                            <br><br>
+                            Toutes ces étapes sont détaillées dans la suite de ce document.
+                        </p>
+                    </section>
+                    <section id="Caracteristiques">
+                        <h3>Caractéristiques principales d'une P1S</h3>
+                        <p>
+                            <todo>insérer textes + listes</todo>
+                        </p>
+                    </section>
+                    <section id="Avantages">
+                        <h3>Avantages spécifiques de la P1S</h3>
+                        <p>
+                            <todo>insérer liste</todo>
+                        </p>
+                    </section>
+                </section>
+                <section id="Materiaux">
+                    <h2>Les matériaux imprimables en FDM</h2>
+                    <section id="PLA">
+                        <h3>PLA</h3>
+                        <p>
+                            Le PLA, PolyLactic Acid, est le matériau le plus utilisé en impression 3D. Il est de loin le plus 
+                            facile à imprimer et possède des propriétés mécaniques suffisantes pour la plupart des usages. 
+                            Cependant, ce filament se déforme autour de 60°C. Il faut donc faire attention lors des expositions 
+                            prolongées en plein soleil ou au contact d'appareil chauffants (ESC, Batterie, ...).
+                        </p>
+                    </section>
+                    <section id="LW-PLA">
+                        <h3>LW-PLA</h3>
+                        <p>
+                            Le LW-PLA, acronyme de LightWeight PolyLactic Acid, est une variante particulière du PLA ayant pour 
+                            particularité de se dilater à l'impression, donnant ainsi une structure telle une mousse rigide. Cela 
+                            permet de créer des pièces de même volume mais de masse réduite, ce qui est notamment idéal pour des 
+                            pièces de drones. Le prix de ces filaments est généralement plus élevé (2 à 3 fois celui du PLA), mais 
+                            est compensé par le volume imprimable pour une même masse de filament. En fonction des paramètres 
+                            utilisés, il est possible d'obtenir une masse volumique jusqu'à 2 fois inférieure au PLA.
+                        </p>
+                    </section>
+                    <section id="PETG">
+                        <h3>PETG</h3>
+                        <p>
+                            Le PETG, ou PolyEthylene Terephthalate Glycol, est un compromis entre le PLA et l'ABS. Il est plus 
+                            solide et plus résistant à la chaleur que le PLA, tout en restant facile à imprimer. Sa bonne résistance 
+                            chimique et mécanique en fait un excellent choix pour les pièces fonctionnelles ou structurelles. Le PETG 
+                            présente une bonne adhérence inter-couches, ce qui améliore la solidité des pièces, mais peut aussi rendre 
+                            leur retrait du plateau plus difficile.
+                        </p>
+                    </section>
+                    <section id="ABS/ASA">
+                        <h3>ABS/ASA</h3>
+                        <p>
+                            L'ABS (AcryloNitrile Butadiène Styrène) est un matériau historique de l'impression 3D, apprécié pour sa 
+                            résistance mécanique et thermique supérieure au PLA. Il est particulièrement adapté pour les pièces 
+                            techniques et les prototypes fonctionnels. En revanche, il se déforme facilement lors du refroidissement 
+                            (“warping”) et dégage des fumées désagréables/toxiques lors de l'impression. L'utilisation d'une imprimante 
+                            à enceinte fermée et filtre intégrée est nécessaire pour l'utilisation de ce filament.
+                            <br><br>
+                            L'ASA (AcryloNitrile Styrène Acrylate) est une alternative à l'ABS, avec des propriétés similaires mais une 
+                            meilleure résistance aux UV et aux intempéries. Il est donc privilégié pour les pièces destinées à un 
+                            usage en extérieur. Les deux matériaux nécessitent un caisson fermé et un plateau chauffant pour limiter 
+                            les déformations.
+                        </p>
+                    </section>
+                    <section id="TPU">
+                        <h3>TPU</h3>
+                        <p>
+                            Le TPU, ou Thermoplastic PolyUrethane, est un filament flexible qui permet d'imprimer des pièces élastiques 
+                            comme des joints, des amortisseurs ou des roues. Sa souplesse dépend du grade de TPU. Bien qu'il adhère 
+                            très bien au plateau, son extrusion est plus délicate : il faut réduire la vitesse d'impression et limiter 
+                            la rétraction pour éviter le bourrage du filament. Le TPU offre une excellente résistance à l'usure et à 
+                            l'abrasion, ce qui en fait un matériau idéal pour des applications fonctionnelles et résistantes.
+                        </p>
+                    </section>
+                    <section id="Composites">
+                        <h3>Composites</h3>
+                        <p>
+                            Les filaments composites contiennent des fibres courtes de carbone, de verre ou d'autres renforts incorporés 
+                            dans une matrice polymère (souvent PLA, PETG ou Nylon). Ces fibres augmentent considérablement la rigidité 
+                            et la résistance mécanique de la pièce, tout en réduisant légèrement sa masse volumique. En contrepartie, 
+                            les filaments composites sont abrasifs : ils usent rapidement les buses en laiton, d'où la nécessité d'utiliser 
+                            une buse en acier trempé ou en carbure. Ces matériaux sont particulièrement adaptés aux pièces structurelles, 
+                            aux supports rigides ou aux éléments mécaniques soumis à des efforts modérés.
+                        </p>
+                    </section>
+                </section>
+                <section id="Tuto">
+                    <h2>Procédure d'impression simple</h2>
+                    <section id="STL">
+                        <h3>Préparation du fichier STL</h3>
+                        <p>
+                            Créez une pièce selon vos besoins sur SolidWorks, 3DX, Fusion360, Blender ou presque n'importe quel logiciel 
+                            de modélisation 3D. Attention, cette pièce sera imprimée et, dans certains cas, destinée à être fonctionnelle. 
+                            Pensez donc à adapter votre conception au processus de fabrication additive, tant pour vous adapter aux 
+                            contraintes de la technologie (comme les surfaces au-dessus du vide), ou laisser une tolérance en fonction des 
+                            ajustements souhaités, qu'ils soient glissants ou serrés (des prototypes de sections de pièces peuvent être 
+                            nécessaires pour trouver les bons ajustements). Insérer un arbre dans un alésage sans tolérance est 
+                            particulièrement complexe avec des pièces imprimées en 3D en plastique et dans la majorité des cas s'avère 
+                            impossible sans endommager les pièces. Il peut également parfois être pertinent d'ajouter des congés afin 
+                            d'adoucir les angles et réduire la déformation des pièces par accumulation de contraintes internes sur des arrêtes.<br>
+                            C'est amusant au maillet mais 2 min, pas plus. Également, mettez un maximum de congé. Cela vous évitera un ou 
+                            deux échecs d'impression à l'avenir.<br>
+                            <todo>Insérer image</todo><br>
+                            Une fois votre pièce finalisée, vous devez l'exporter dans un format compatible avec le logiciel permettant de
+                            convertir votre modèle en instructions pour la machine, communément appelé « Slicer ». Généralement ces derniers 
+                            prennent en charge un grand nombre de formats de fichiers mais le plus commun, en raison de son adaptabilité, 
+                            sa taille et sa qualité présentant un bon compromis, est le format .STL. Les autres formats génériques fréquemment 
+                            pris en charge sont les .STEP, .3MF, .AMF, .OBJ et même des fichiers vectoriels .SVG pour pouvoir, par exemple, 
+                            imprimer des logos extrudés.
+                            <br><br>
+                            Faites fichier → enregistrer sous/exporter → format STL. Vous pouvez augmenter la qualité de votre STL en 
+                            allant dans Options puis en mettant les curseurs de Déviation et Angle proche du maximum (les mettre au maximum 
+                            peut grandement ralentir votre ordinateur, la taille du fichier augmentant avec la précision). Ce paramètre sera 
+                            particulièrement important dans le cas d'une pièce arrondie.<br>
+                            <todo>Insérer image</todo><br>
+                            Vous pouvez également trouver des modèles en ligne sous format STL directement.<br><br>
+                            Une fois récupéré, ouvrez Bambu Studio (ou Prusa, Orca ou autre slicer) et ouvrez votre STL. Choisissez 
+                            l'imprimante que vous possédez en haut à gauche (1) ainsi que son type de plateau (PEI texturé par défaut) afin 
+                            d'ajuster la taille de celui-ci puis placez votre pièce dessus. Orientez-la de manière à réduire les supports, 
+                            orienter les couches d'impression afin d'optimiser la résistance mécanique et optimiser le temps. L'imprimante 
+                            imprime de bas en haut, couche par couche. La pièce imprimée sera beaucoup plus fragile en cisaillement suivant 
+                            ces lignes de couche. En effet, en appliquant un effort sur la pièce, deux couches peuvent se séparer plus ou 
+                            moins facilement. Privilégiez donc des efforts alignés avec les couches plutôt qu'en cisaillement inter-couches. 
+                            Pour ce qui est des pièces dimensionnées sur la longueur, un long pavé droit par exemple, imprimez les couchées 
+                            sur le plateau. En l'imprimant debout, l'imprimante réalisera les couches basses, puis moyennes puis arrivera 
+                            aux plus hautes. Les vibrations de la buse de l'imprimante sur le haut de la pièce risquent de la faire vibrer, 
+                            la décoller du plateau et la faire tomber. L'imprimante continuera d'imprimer dans le vide et vous aurez le droit 
+                            à un super spaghetti à votre retour. Pour un premier essai rapide, il existe un bouton magique (2) sur Bambu 
+                            Studio, qui place automatiquement la pièce. Cependant, ce bouton magique ne connaît pas l'usage de votre pièce, 
+                            il ne tiendra pas en compte le cisaillement. Si c'est un problème, réorientez la pièce manuellement. <br><br>
+                            Vous pouvez répéter l'opération pour placer plusieurs pièces sur le plateau afin de les imprimer directement en 
+                            une fois, sur un même plateau.<br>
+                            <todo>Insérer image</todo><br>
+                            Dans le cadre de ce document, le logiciel utilisé est Bambu Studio car celui généralement le plus utilisé pour 
+                            les imprimantes de marque BambuLab. Ce logiciel est une branche modifiée du slicer Open Source Prusa et présente 
+                            donc dans une interface différente les mêmes options.<br>
+                            De nombreux autres slicer sont disponibles, mais sont à leur tour généralement des branches des logiciels 
+                            mentionnés précédemment et présentant généralement les mêmes fonctionnalités.
+                            <br><br><br>
+                            Vous allez à présent modifier les paramètres d'impression.
+                            <br><br><br>
+                            En haut, vous voyez plusieurs menus (préparer, aperçu, appareil, ...). Vous avez placé et orienté votre pièce 
+                            dans Préparer puis vous êtes arrivés dans Aperçu en Tranchant/Sliçant le plateau. A droite, vous voyez une barre, 
+                            faites-la varier pour voir les différentes couches d'impression. Vérifiez que l'imprimante ne va pas imprimer 
+                            dans le vide pendant le processus. Auquel cas, il va falloir soit réorienter la pièce, soit ajouter des supports. 
+                            Dans le menu de gauche, choisissez votre filament. En fonction de votre imprimante, vous pouvez imprimer en un 
+                            unique filament ou en plusieurs. Cette fonctionnalité s'appelle l'AMS. Nous en parlerons dans une section dédiée.
+                            <br><br>
+                            Toujours dans cette interface, modifiez votre préréglage système en fonction de la précision que vous voulez 
+                            retrouver sur votre pièce. Plus vous choisissez un diamètre petit, plus l'impression sera longue mais également 
+                            plus précise. Si vous faites une maquette avec de très petits détails, prenez du 0.12mm High Quality par exemple. 
+                            Pour une pièce classique, prenez 0.20mm Standard. 
+                            <br><br>
+                            Sur votre pièce, la “couture” est l'endroit où l'imprimante change de couche. L'imprimante va commencer sa couche 
+                            en un point, puis faire une longue ligne le long de la pièce, puis, une fois terminée, l'imprimante passera à 
+                            la couche du dessus. Cette couture peut parfois être visible sur la pièce finale. Si vous faites une pièce 
+                            esthétique, vous pouvez la placer où vous voulez, en dessous de votre rafale miniature par exemple ou dans un 
+                            angle. Sur l'aperçu Bambu Studio, elle est représentée par un point blanc à chaque couche. Ce paramètre se trouve 
+                            dans la section Qualité.<br>
+                            <todo>Insérer image</todo><br>
+                            Dans la section Résistance, vous pouvez modifier les parois. Celles-ci sont les principales sources de résistance 
+                            d'une pièce. Également, lorsque vous imprimez de tout petits détails, vous pouvez activer l'option “détecter les 
+                            parois fines”. <br><br>
+                            Plus bas, vous pouvez modifier le remplissage de votre pièce. Ces motifs vont remplir l'intérieur de vos pièces 
+                            afin de leur garantir une rigidité optimisée avec une quantité de matériaux moindre.  Le plus optimisé actuellement 
+                            est gyroïde. Pour une pièce de base en PLA, mettez entre 5 et 10% de remplissage, c'est bien assez résistant. 
+                            Chaque remplissage tel que ceux en grilles (plus étanches, plus rapide, moins de vibration) a ses avantages et 
+                            inconvénients, effectuez vos recherches.<br>
+                            <todo>Insérer image<br>insérer tableau</todo><br>
+                            Comme vous pouvez l'observer, la résistance est particulièrement liée au nombre de paroi de la pièce et non au 
+                            remplissage. Ce dernier va surtout influer sur la rigidité (particulièrement critique avec du TPU par exemple) 
+                            ainsi que sur la masse.
+                            <br><br>
+                            Ensuite, passons aux supports. Comme dit précédemment, l'imprimante ne peut pas imprimer dans le vide. Vous 
+                            pouvez donc activer la génération de supports automatiques. Ils seront imprimés en même temps que la pièce et 
+                            seront faciles à retirer car plus fragiles. Afin de ne laisser aucune trace sur votre pièce, activez les supports 
+                            arborescents automatiques sur plateau uniquement. Ajoutez-en au besoin. La plupart du temps, les supports 
+                            arborescents seront suffisants, sinon, essayez avec des supports normaux.<br>
+                            <todo>Insérer image</todo><br>
+                            Parfois, la pièce va se décoller du plateau ou se déformer au niveau des angles imprimés au niveau du plateau. 
+                            Auquel cas, ajoutez des bordures (ne pas confondre avec les jupes). Celles-ci s'impriment aux pieds de votre 
+                            pièce pour rigidifier la liaison avec le plateau. Les bordures se trouvent dans le menu de gauche “Autre”.
+                            Une fois les paramètres modifiés, tranchez à nouveau le plateau et répétez la manipulation jusqu'à votre 
+                            résultat final. Puis, exportez le fichier tranché du plateau et sauvegardez au format gcode.3mf sur la 
+                            carte SD de l'imprimante.
+                        </p>
+                    </section>
+                    <section id="imprimante">
+                        <h3>Préparation de l'imprimante</h3>
+                        <p>
+                            Une bonne préparation de l'imprimante est essentielle pour garantir une impression réussie. Suivez cette 
+                            checklist étape par étape avant chaque impression, surtout si vous changez de matériau ou si l'imprimante 
+                            n'a pas été utilisée récemment.<br>
+                            <todo>Insérer la suite</todo><br>
+                        </p>
+                    </section>
+                    <section id="posttraitement">
+                        <h3>Post-traitement</h3>
+                        <p>
+                            <todo>Insérer la suite</todo>
+                        </p>
+                    </section>
+                </section>
+                <section id="autresfilaments">
+                    <h2>Impressions avec d'autres filaments</h2>
+                    <section id="LW-PLA2">
+                        <h3>LWPLA</h3>
+                        <p>
+                            En raison de sa nature expansible avec la chaleur, l'utilisation de ce matériau demande donc un débit 
+                            d'impression réduit (autour de 0.55 pour la marque ColorFabb) et une conception adaptée afin d'anticiper 
+                            la rigidité réduite. Ce type de filament a également tendance à causer plus de stringing car son expansion 
+                            avec la chaleur continue souvent un peu, même à l'arrêt de l'extrudeur. Le stringing est développé plus en 
+                            profondeur par la suite.<br><br>
+                            Pour réaliser des pièces profitant pleinement de la caractéristique de légèreté du LwPLA, nous vous 
+                            recommandons de ne pas excéder 2 parois et 5% de remplissage. De la fibre de verre (et résine Epoxy) peut 
+                            être ajouté après pour un gain de solidité.<br>
+                            Ce filament fait partie des filaments où la sélection de plusieurs paramètres différents peut être pertinent 
+                            en fonction du résultat souhaité (focus sur la légèreté OU la solidité). Il est donc nécessaire de créer un 
+                            nouveau réglage de filament. Nous conseillons pour cela de modifier le préréglage du PLA Aéro de BambuLab.<br><br>
+                            Ci-dessous de bons paramètres pour imprimer le LwPLA avec une masse volumique de 50% de celle du PLA :<br>
+                            <todo>Insérer images</todo><br>
+                        </p>
+                    </section>
+                    <section id="ABS/ASA2">
+                        <h3>ABS/ASA</h3>
+                        <p>
+                           Les paramètres par défaut proposés pour ces filamants sont bons. Cependant, ces matériaux demandent des 
+                           précautions particulières : 
+                            <ul>
+                                <li>Nécessité d'une enceinte fermée, aussi bien pour prévenir le Warping que pour protéger l'utilisateur 
+                                    de vapeurs désagréables/toxiques.</li>
+                                <li>Utilisation de colle pour prévenir le Wraping</li>
+                            </ul>
+                           <todo>Insérer images</todo><br>
+                        </p>
+                    </section>
+                    <section id="TPU2">
+                        <h3>TPU</h3>
+                        <p>
+                            Le TPU peut s'imprimer sur imprimante à enceinte ouverte. Nous vous recommandons fortement d'utiliser les 
+                            paramètres proposés de base pour ce filament.<br>
+                            La rigidité de votre pièce va principalement dépendre du nombre de parois et du remplissage choisis. Pour 
+                            une pièce particulièrement déformable, nous conseillons de ne pas dépasser 2 parois et 5% de remplissage. <br>
+                            <em>ATTENTION : le TPU est particulièrement résistant du fait de son élasticité, inutile donc d'augmenter à l'excès 
+                            le nombre de parois et le remplissage pour augmenter la résistance de la pièce.</em>
+
+                            <br>
+                            <todo>Insérer images</todo><br>
+                        </p>
+                    </section>
+                </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026</p>
+        <p>Charlize CARON</p>
+    </footer>
+
+    <script>
+    const burger = document.querySelector(".burger");
+    const sidebar = document.querySelector(".sidebar");
+
+
+    burger.addEventListener("click", () => {
+
+        sidebar.classList.toggle("active");
+
+    });
+    </script>
+</body>
+
+</html>
