@@ -248,6 +248,37 @@ h1{
     text-decoration:underline;
 }
 
+
+/* =========================
+   SÉLECTION
+========================= */
+
+::selection{
+    background:rgba(248,179,99,.35);
+    color:white;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--background);
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2b2b35;
+    border-radius:var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#444452;
+}
+
 /* FOOTER */
 
 footer{
@@ -260,7 +291,6 @@ footer{
     border-top:1px solid var(--border);
     color:var(--text-muted);
 }
-
 
 /* RESPONSIVE */
 

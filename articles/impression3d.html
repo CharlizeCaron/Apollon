@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Apollon - Microfusées</title>
+    <title>Apollon - Impression 3D</title>
 
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/articles.css">
@@ -65,7 +65,7 @@
                     <a href="#imprimantesFDM">Les imprimantes FDM/FFF (focus sur P1S/P1P)</a>
                     <ul class="sous-section">
                         <li>
-                            <a href="Principe">Principe de fonctionnement</a>
+                            <a href="#Principe">Principe de fonctionnement</a>
                         </li>
                         <li>
                             <a href="#Caracteristiques">Caractéristiques principales d'une P1S</a>
@@ -145,6 +145,9 @@
                             <a href="#BuseBouchee">Buse bouchée</a>
                         </li>
                         <li>
+                            <a href="#Arret">Arrêt de l'impression</a>
+                        </li>
+                        <li>
                             <a href="#Noeud">Bobine emmêlée</a>
                         </li>
                         <li>
@@ -167,7 +170,10 @@
             <div class="titre">
                 <h1>Impression 3D</h1>
             </div>
-
+            <figure>
+                <img src="../images/3d printing.png" style="width:40%">
+            </figure>
+            <hr>
             <section id="introduction">
                 <h2>Introduction</h2>
                 <section id="additiveVSsoustractive">
@@ -197,10 +203,69 @@
                         spécialisé. Toutefois, pour la production en grande série, l'usinage reste souvent plus 
                         rentable grâce à sa rapidité et sa reproductibilité.
                     </p>
-                    <todo>insérer image<br>insérer tableau</todo>
+
+                    <figure>
+                        <img src="../images/3d printing/CNC vs 3dprint.png" style="width:95%">
+                        <figcaption>A gauche: pièce taillée dans un bloc d'alu, A droite: pièce formée par dépôt de filament</figcaption>
+                    </figure>
+
+                    <table>
+                        <tr>
+                            <th>Critère</th>
+                            <th>Fabrication additive (ex: impression 3d)</th>
+                            <th>Fabrication soustractive (ex: usinage CNC)</th>
+                        </tr>
+                        <tr>
+                            <td>Principe</td>
+                            <td>Ajout de matière couche par couche à partir d'un modèle numérique</td>
+                            <td>Retrait de matière d'un bloc initial jusqu'à obtention de la forme finale</td>
+                        </tr>
+                        <tr>
+                            <td>Consommation de matière</td>
+                            <td>Optimisée, peu de pertes (seule la matière déposée est utilisée)</td>
+                            <td>Déchets importants (copeaux, sciures, rebuts)</td>
+                        </tr>
+                        <tr>
+                            <td>Complexité des formes</td>
+                            <td>Grande liberté geométrique, formes complexes et internes possibles</td>
+                            <td>Limitée par l'outil et les axes de la machine</td>
+                        </tr>
+                        <tr>
+                            <td>Outillage</td>
+                            <td>Pas ou peu d'outillage spécifique nécessaire</td>
+                            <td>Nécessite des outils coupants adaptés et souvent coûteux</td>
+                        </tr>
+                        <tr>
+                            <td>Vitesse de production</td>
+                            <td>Relativement lente, surtout pour les grandes pièces</td>
+                            <td>Plus rapide pour la production en série</td>
+                        </tr>
+                        <tr>
+                            <td>Finition de surface</td>
+                            <td>Rugosité souvent importante, nécessite parfois un post-traitement</td>
+                            <td>Très bonne qualité de surface possible directement</td>
+                        </tr>
+                        <tr>
+                            <td>Propriétés mécaniques</td>
+                            <td>Variables selon la technologie, souvent anisotropes (moins résistantes dans l'axe Z)</td>
+                            <td>Pièces massives et homogènes, meilleures propriétés mécaniques</td>
+                        </tr>
+                        <tr>
+                            <td>Applications typiques</td>
+                            <td>Prototypage rapide, pièces uniques, petites séries, géométries complexes</td>
+                            <td>Pièces de production, grandes séries, usinage de précision</td>
+                        </tr>
+                        <tr>
+                            <td>Prix (machine + usage)</td>
+                            <td>Investissement initial abordable (imprimantes de bureau dès quelques centaines d'euros), coûts matière faibles</td>
+                            <td>Machines et outils coûteux (CNC, outillage), coûts de matière plus élevés, mais rentables en grande série</td>
+                        </tr>
+                    </table>
+
                 </section>
 
                 <section id="additivedeveloppe">
+                    <h3>Les différentes technologies de fabrication additive</h3>
                     <section id="FDM/FFF">
                         <h4>FDM/FFF</h4>
                         <p>
@@ -210,7 +275,10 @@
                             abordables, simples à utiliser et adaptées au prototypage comme à la production de 
                             petites séries. Les limites principales concernent la précision, la finition de 
                             surface et la résistance mécanique, qui dépend de l'orientation des couches. 
-                            <br><todo>insérer image</todo>
+                            <figure>
+                                <img src="../images/3d printing/P1P.png" alt="BambuLab P1P" style="width:50%">
+                                <figcaption>BambuLab P1P</figcaption>
+                            </figure>
                         </p>
                     </section>
                     <section id="SLA/DLP">
@@ -223,7 +291,10 @@
                             du médical. En revanche, les résines peuvent être coûteuses, fragiles et nécessitent un 
                             post-traitement (nettoyage, polymérisation UV). Par ailleurs, elles sont souvent toxiques, 
                             demandant une ventilation adaptée et éventuellement le port d'EPIs.
-                            <br><todo>insérer image</todo>
+                            <figure>
+                                <img src="../images/3d printing/FormLabs.png" alt="Formlabs Form 4B" style="width:40%">
+                                <figcaption>Formlabs Form 4B</figcaption>
+                            </figure>
                         </p>
                     </section>
                     <section id="SLS">
@@ -234,8 +305,13 @@
                             isotropes et sans besoin de supports, ce qui autorise des géométries très complexes. Le SLS 
                             est largement utilisé en aéronautique, automobile et dans la fabrication de pièces 
                             fonctionnelles. Son principal inconvénient est le coût élevé des machines et des installations.
-                            <br><todo>insérer image</todo>
                         </p>
+
+                        <figure>
+                            <img src="../images/3d printing/SLS.png" alt="SLS" style="width:50%">
+                            <figcaption>Equipement minimal nécessaire pour l'impression SLS, série Fuse de Formlabs, 30 000€, l'un des plus abordables du marché</figcaption>
+                        </figure>
+
                     </section>
                     <section id="autrestech">
                         <h4>Autres</h4>
@@ -245,11 +321,16 @@
                             cobalt-chrome) avec des formes complexes et des propriétés mécaniques proches des pièces usinées. 
                             Ces technologies sont utilisées dans l'aéronautique, le médical ou l'outillage hautes performances, 
                             mais leur coût reste très élevé et nécessite un environnement industriel spécialisé.
-                            <br><todo>insérer image</todo>
                         </p>
+
+                        <figure>
+                            <img src="../images/3d printing/SLM DMLS.png" alt="SLM/DMLS example" style="width:50%">
+                            <figcaption>Navier, le moteur de fusée imprimé en 3D de la startup française Latitude</figcaption>
+                        </figure>
                     </section>
                 </section>
             </section>
+            <hr>
                 <section id="imprimantesFDM">
                     <h2>Les imprimantes FDM/FFF (focus sur P1P/P1S)</h2>
                     <section id="Principe">
@@ -268,8 +349,12 @@
                             limiter les déformations. Chaque couche déposée se solidifie rapidement en refroidissant, ce qui 
                             permet de supporter la couche suivante. La superposition successive de ces couches aboutit à la 
                             création d'une pièce finale solide et fonctionnelle.
-                            <br><todo>insérer image</todo>
                             <br>
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/detailed 3dprinter.png" alt="imprimante 3D détaillée" style="width:40%">
+                            </figure>
+                        <p>
                             En amont de l'impression, la pièce doit être modélisée à l'aide d'un logiciel de conception 
                             assistée par ordinateur (CAO). Le modèle 3D est ensuite traité dans un logiciel de “slicing” 
                             (tranchage), qui convertit l'objet en une succession de couches et génère un fichier 
@@ -285,17 +370,62 @@
                     </section>
                     <section id="Caracteristiques">
                         <h3>Caractéristiques principales d'une P1S</h3>
-                        <p>
-                            <todo>insérer textes + listes</todo>
-                        </p>
+
+                        <strong>Corps:</strong>
+                        <ul>
+                            <li>Volume d'impression: 256x256x256 mm3</li>
+                            <li>Châssis: Acier Soudé</li>
+                            <li>Panneaux: Fermés (Plastique & Verre)</li>
+                            <li>En pratique, éviter d'utiliser le volume d'impression maximum pour
+                                éviter tout erreur.</li>
+                        </ul>
+                        <br>
+                        <strong>Vitesse:</strong>
+                        <ul>
+                            <li>Vitesse Maximae de la Tête d'Outil: 500mm/s</li>
+                            <li>Accélération maximale de la Tête d'Outil: 20m/s²</li>
+                        </ul>
+                        <em>En pratique, ces valeurs sont rarement atteintes pour conserver une qualité
+                            d'impression convenable.</em>
+                        <br><br>
+                        <strong>Tête d'outil:</strong>
+                        <ul>
+                            <li>Hotend: Tout métal</li>
+                            <li>Buse: Acier inoxydable</li>
+                            <li>Température Max Hotend: 300°C</li>
+                            <li>Câble Tête d'impression</li>
+                        </ul>
+                        <br>
+                        <strong>Refroidissement et Filtration:</strong>
+                        <ul>
+                            <li>Ventilateur Carte Contrôle: Contrôle Boucle Fermée</li>
+                            <li>Ventilateur Régulation Température Chalbre: Contrôle Boucle Fermée</li>
+                            <li>Ventilateur Auxiliaire de Pièce: Contrôle Boucle Fermée</li>
+                            <li>Filtre à Air: Filtre Charbon Actif</li>
+                        </ul>
+                        <br>
+                        <strong>Filaments Supportés:</strong>
+                        <ul>
+                            <li>PLA, PETG, TPU, PVA, PET: Idéal</li>
+                            <li>ABS, ASA: Idéal</li>
+                            <li>PA, PC: Capable</li>
+                        </ul>
                     </section>
                     <section id="Avantages">
                         <h3>Avantages spécifiques de la P1S</h3>
-                        <p>
-                            <todo>insérer liste</todo>
-                        </p>
+                        <ul>
+                            <li>User Friendly: Prise en main rapide, idéal pour les débutants et les 
+                                professionnels pressés.</li>
+                            <li>Enceinte fermée: Impression de matériaux techniques (ABS, PC) sans
+                                warping, environnement sécurisé.</li>
+                            <li>Calibrage automatique: Nivelage et réglages précis sans intervention
+                                manuelle, qualité constante.</li>
+                            <li>Bambu Studio: Logiciel tout-en-un: slicing, surveillance, gestion
+                                multi-matériaux, mises à jour.</li>
+                        </ul>
                     </section>
                 </section>
+                <hr>
                 <section id="Materiaux">
                     <h2>Les matériaux imprimables en FDM</h2>
                     <section id="PLA">
@@ -365,6 +495,7 @@
                         </p>
                     </section>
                 </section>
+                <hr>
                 <section id="Tuto">
                     <h2>Procédure d'impression simple</h2>
                     <section id="STL">
@@ -380,8 +511,12 @@
                             impossible sans endommager les pièces. Il peut également parfois être pertinent d'ajouter des congés afin 
                             d'adoucir les angles et réduire la déformation des pièces par accumulation de contraintes internes sur des arrêtes.<br>
                             C'est amusant au maillet mais 2 min, pas plus. Également, mettez un maximum de congé. Cela vous évitera un ou 
-                            deux échecs d'impression à l'avenir.<br>
-                            <todo>Insérer image</todo><br>
+                            deux échecs d'impression à l'avenir.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/somerandomtips.png" style="width: 95%">
+                            </figure>
+                        <p>
                             Une fois votre pièce finalisée, vous devez l'exporter dans un format compatible avec le logiciel permettant de
                             convertir votre modèle en instructions pour la machine, communément appelé « Slicer ». Généralement ces derniers 
                             prennent en charge un grand nombre de formats de fichiers mais le plus commun, en raison de son adaptabilité, 
@@ -389,11 +524,15 @@
                             pris en charge sont les .STEP, .3MF, .AMF, .OBJ et même des fichiers vectoriels .SVG pour pouvoir, par exemple, 
                             imprimer des logos extrudés.
                             <br><br>
-                            Faites fichier → enregistrer sous/exporter → format STL. Vous pouvez augmenter la qualité de votre STL en 
+                            Faites fichier → enregistrer sous/exporter → format STL. Sur SolidWorks, vous pouvez augmenter la qualité de votre STL en 
                             allant dans Options puis en mettant les curseurs de Déviation et Angle proche du maximum (les mettre au maximum 
                             peut grandement ralentir votre ordinateur, la taille du fichier augmentant avec la précision). Ce paramètre sera 
-                            particulièrement important dans le cas d'une pièce arrondie.<br>
-                            <todo>Insérer image</todo><br>
+                            particulièrement important dans le cas d'une pièce arrondie.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/solidworks parameters.png" alt="interface solidworks" style="width: 60%">
+                            </figure>
+                        <p>
                             Vous pouvez également trouver des modèles en ligne sous format STL directement.<br><br>
                             Une fois récupéré, ouvrez Bambu Studio (ou Prusa, Orca ou autre slicer) et ouvrez votre STL. Choisissez 
                             l'imprimante que vous possédez en haut à gauche (1) ainsi que son type de plateau (PEI texturé par défaut) afin 
@@ -410,8 +549,12 @@
                             Studio, qui place automatiquement la pièce. Cependant, ce bouton magique ne connaît pas l'usage de votre pièce, 
                             il ne tiendra pas en compte le cisaillement. Si c'est un problème, réorientez la pièce manuellement. <br><br>
                             Vous pouvez répéter l'opération pour placer plusieurs pièces sur le plateau afin de les imprimer directement en 
-                            une fois, sur un même plateau.<br>
-                            <todo>Insérer image</todo><br>
+                            une fois, sur un même plateau.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/bambustudio steps.png" alt="interface bambustudio" style="width: 90%">
+                            </figure>
+                        <p>
                             Dans le cadre de ce document, le logiciel utilisé est Bambu Studio car celui généralement le plus utilisé pour 
                             les imprimantes de marque BambuLab. Ce logiciel est une branche modifiée du slicer Open Source Prusa et présente 
                             donc dans une interface différente les mêmes options.<br>
@@ -437,8 +580,12 @@
                             la couche du dessus. Cette couture peut parfois être visible sur la pièce finale. Si vous faites une pièce 
                             esthétique, vous pouvez la placer où vous voulez, en dessous de votre rafale miniature par exemple ou dans un 
                             angle. Sur l'aperçu Bambu Studio, elle est représentée par un point blanc à chaque couche. Ce paramètre se trouve 
-                            dans la section Qualité.<br>
-                            <todo>Insérer image</todo><br>
+                            dans la section Qualité.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/couture slicing.png" alt="Couture" style="width: 50%">
+                            </figure>
+                        <p>
                             Dans la section Résistance, vous pouvez modifier les parois. Celles-ci sont les principales sources de résistance 
                             d'une pièce. Également, lorsque vous imprimez de tout petits détails, vous pouvez activer l'option “détecter les 
                             parois fines”. <br><br>
@@ -446,8 +593,45 @@
                             afin de leur garantir une rigidité optimisée avec une quantité de matériaux moindre.  Le plus optimisé actuellement 
                             est gyroïde. Pour une pièce de base en PLA, mettez entre 5 et 10% de remplissage, c'est bien assez résistant. 
                             Chaque remplissage tel que ceux en grilles (plus étanches, plus rapide, moins de vibration) a ses avantages et 
-                            inconvénients, effectuez vos recherches.<br>
-                            <todo>Insérer image<br>insérer tableau</todo><br>
+                            inconvénients, effectuez vos recherches.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/remplissages.png" alt="Différents Remplissages" style="width: 80%">
+                            </figure>
+                            <table>
+                                <tr>
+                                    <th>Exemple de pièce</th>
+                                    <th>Nombre de parois recommandé</th>
+                                    <th>Remplissage recommandé</th>
+                                </tr>
+                                <tr>
+                                    <td>Pièce de décorration, Pièce commune, pas de chargement important</td>
+                                    <td>2</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Pièce sollocitée mécaniquement, chargement intermédiaire</td>
+                                    <td>3-4</td>
+                                    <td>5%-10%</td>
+                                </tr>
+                                <tr>
+                                    <td>Pièce à chargement important (exemple: pieds du R2D2)</td>
+                                    <td>5-6</td>
+                                    <td>40%-50%</td>
+                                </tr>
+                                <tr>
+                                    <td>Pièce lourde (exemple: ogive de fusée)</td>
+                                    <td>2-3</td>
+                                    <td>30%-50%</td>
+                                </tr>
+                                <tr>
+                                    <td>Filaments particuliers</td>
+                                    <td>Selon filament</td>
+                                    <td>Selon filament</td>
+                                </tr>
+                            </table>
+                            <br>
+                        <p>
                             Comme vous pouvez l'observer, la résistance est particulièrement liée au nombre de paroi de la pièce et non au 
                             remplissage. Ce dernier va surtout influer sur la rigidité (particulièrement critique avec du TPU par exemple) 
                             ainsi que sur la masse.
@@ -456,8 +640,12 @@
                             pouvez donc activer la génération de supports automatiques. Ils seront imprimés en même temps que la pièce et 
                             seront faciles à retirer car plus fragiles. Afin de ne laisser aucune trace sur votre pièce, activez les supports 
                             arborescents automatiques sur plateau uniquement. Ajoutez-en au besoin. La plupart du temps, les supports 
-                            arborescents seront suffisants, sinon, essayez avec des supports normaux.<br>
-                            <todo>Insérer image</todo><br>
+                            arborescents seront suffisants, sinon, essayez avec des supports normaux.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/export.png" alt="Etapes Export" style="width: 85%">
+                            </figure>
+                        <p>
                             Parfois, la pièce va se décoller du plateau ou se déformer au niveau des angles imprimés au niveau du plateau. 
                             Auquel cas, ajoutez des bordures (ne pas confondre avec les jupes). Celles-ci s'impriment aux pieds de votre 
                             pièce pour rigidifier la liaison avec le plateau. Les bordures se trouvent dans le menu de gauche “Autre”.
@@ -471,17 +659,190 @@
                         <p>
                             Une bonne préparation de l'imprimante est essentielle pour garantir une impression réussie. Suivez cette 
                             checklist étape par étape avant chaque impression, surtout si vous changez de matériau ou si l'imprimante 
-                            n'a pas été utilisée récemment.<br>
-                            <todo>Insérer la suite</todo><br>
+                            n'a pas été utilisée récemment.
+                            <ol>
+                                <h4><li>Vérifier la compatibilité du matériau</li></h4>
+                                    <br>Consultez les spécifications:<br>
+                                    <ul>
+                                        <li>Assurez-vous que le matériau que vous souhaitez utiliser (PLA, PETG, ABS, TPU, etc.) est compatible 
+                                            avec votre imprimante et ses réglages actuels.</li>
+                                        <li>Vérifiez dans Bambu Studio ou sur l'écran de la P1S que le profil sélectionné correspond bien au 
+                                            filament chargé (ex. : température de la buse, du plateau, vitesse d'impression).</li>
+                                        <li>Exemple : L'ABS nécessite une enceinte fermée et une température de plateau élevée (80-100°C), 
+                                            tandis que le PLA peut s'imprimer en enceinte ouverte à 50-60°C.</li>
+                                    </ul>
+                                    <br>Buse adaptée:<br>
+                                    <ul>
+                                        <li>Pour les filaments abrasifs (composites, fibre de carbone), utilisez une buse en acier trempé pour 
+                                            éviter l'usure prématurée.</li>
+                                    </ul>
+
+                                <h4><li>Nettoyer le plateau</li></h4>
+                                    <br>Plateau PEI texturé:<br>
+                                    <ul>
+                                        <li>Nettoyez-le à l'eau et au savon, à la main, avant chaque impression. Attention à ne pas remettre les 
+                                            doigts sur la surface après nettoyage. Le gras (naturellement produit par les doigts) est le pire 
+                                            ennemi de l'adhésion. Un plateau propre garantit une bonne adhérence de la première couche.</li>
+                                        <li>Il est également possible de le nettoyer avec de l'alcool isopropylique (à 90% ou plus) et un chiffon 
+                                            non pelucheux pour enlever les résidus de colle, de plastique ou de poussière.</li>
+                                        <li>Évitez les produits agressifs (acétone, solvants) qui pourraient endommager la surface.</li>
+                                    </ul>
+                                    <br>Plateau en verre (si applicable):<br>
+                                    <ul>
+                                        <li>Un nettoyage à l'eau et au savon est également nécessaire. <em>ATTENTION aux coupures lors de la 
+                                            manipulation si les bords du plateau ne sont pas émoussés.</em></li>
+                                    </ul>
+
+                                <h4><li>Vérifier le positionnement du plateau</li></h4>
+                                    <br>Stabilité:<br>
+                                    <ul>
+                                        <li>Assurez-vous que le plateau est bien fixé sur son support et qu'il ne bouge pas lors des mouvements 
+                                            de l'imprimante.</li>
+                                        <li>Vérifiez visuellement qu'il est horizontal (le nivelage automatique corrigera les micro-défauts, mais 
+                                            un plateau désaxé peut causer des problèmes).</li>
+                                    </ul>
+
+                                <h4><li>Contrôler la bobine de filament</li></h4>
+                                    <br>Positionnement de la bobine:<br>
+                                    <ul>
+                                        <li>Vérifiez que la bobine est correctement enroulée et qu'elle peut tourner librement sur son support. 
+                                            Une bobine mal positionnée peut causer des accrocs ou des cassures de filament.</li>
+                                        <li>Si vous utilisez une bobine externe (hors AMS), placez-la sur un débiteur et guidez le filament 
+                                            vers l'extrudeur sans torsion.</li>
+                                    </ul>
+                                    <br>Absence de noeud:<br>
+                                    <ul>
+                                        <li>Déroulez manuellement 30 à 50 cm de filament pour vérifier qu'il n'y a pas de nœuds ou d'enchevêtrements. 
+                                            Un nœud peut bloquer l'alimentation et interrompre l'impression.</li>
+                                        <li>Conseil : Si la bobine est emmêlée, déroulez-la complètement et réenroulez-la proprement avant de la replacer.</li>
+                                    </ul>
+                                    <br>Humidité:<br>
+                                    <ul>
+                                        <li>Si le filament a été exposé à l'air libre, vérifiez qu'il n'est pas humide (surtout pour le PLA et le 
+                                            PETG). Un filament humide peut causer des bulles, des sifflements ou une mauvaise extrusion. Utilisez un 
+                                            déshydrateur ou un sac étanche avec du gel de silice si nécessaire.</li>
+                                    </ul>
+
+                                <h4><li>Charger le filament</li></h4>
+                                    <br>Via l'AMS:<br>
+                                    <ul>
+                                        <li>Ouvrez le couvercle de l'AMS et insérez la bobine dans l'emplacement correspondant.</li>
+                                        <li>Guidez l'extrémité du filament dans le tube PTFE jusqu'à ce qu'il soit détecté automatiquement par l'imprimante.</li>
+                                        <li>Sélectionnez le matériau et la couleur sur l'écran tactile pour que l'imprimante charge le filament jusqu'à la buse.</li>
+                                        <li>Attendez que le filament s'écoule uniformément de la buse avant de lancer l'impression.</li>
+                                    </ul>
+                                    <br>Chargement manuel (si vous n'utilise pas l'AMS):<br>
+                                    <ul>
+                                        <li>Dans le menu de l'imprimante, sélectionnez "Charger le filament".</li>
+                                        <li>Suivez rigoureusement les indications affichées par l'imprimante.</li>
+                                        <li>Insérez le filament dans le guide-fil et poussez-le jusqu'à ce que l'extrudeur le saisisse.</li>
+                                        <li>Surveillez l'extrusion pour vous assurer qu'il n'y a pas de blocage.</li>
+                                    </ul>
+                                    <br>Purge du filament précédent:<br>
+                                    <ul>
+                                        <li>Si vous changez de matériau ou de couleur, purgez l'ancien filament en extrudant 10 à 20 cm de nouveau filament pour 
+                                            éviter les mélanges. (Dans le cas d'une imprimante BambuLab, la purge est effectuée automatiquement.)</li>
+                                    </ul>
+
+                                <h4><li>Appliquer un agent d'adhérence (si nécessaire, cas particuliers)</li></h4>
+                                    <br>Colle en stick:<br>
+                                    <ul>
+                                        <li>Appliquez une fine couche uniforme sur le plateau PEI pour les matériaux peu adhésifs (ex. : PLA sur un plateau usé, 
+                                            matériaux composites, etc).</li>
+                                    </ul>
+                                    <br>Laque pour cheveux:<br>
+                                    <ul>
+                                        <li>Vaporisez une couche légère sur un plateau en verre.</li>
+                                    </ul>
+                                    <br><em>Attention: Trop de colle ou de laque peut endommager la surface du plateau ou rendre le retrait de la pièce difficile.</em>
+
+                                <h4><li>Lancer l'impression</li></h4>
+                                    <br>Vérification finale:<br>
+                                    <ul>
+                                        <li>Dans Bambu Studio, relisez les paramètres (température, vitesse, remplissage, etc) et assurez-vous que le fichier G-code 
+                                            correspond bien à votre projet.</li>
+                                        <li>Exportez le fichier sur l'imprimante via Wi-Fi, clé USB ou carte SD.</li>
+                                    </ul>
+                                    <br>Démarrage:<br>
+                                    <ul>
+                                        <li>Lancez l'impression depuis l'écran de la P1S ou via l'application BambuLab.</li>
+                                        <li>L'imprimante effectuera automatiquement un nivelage et un test de vibration avant de commencer.</li>
+                                    </ul>
+
+                                <h4><li>Surveiller les premières couches</li></h4>
+                                    <br>Adhérence au plateau:<br>
+                                    <ul>
+                                        <li>Restez à proximité pendant les 5 à 10 premières minutes pour vérifier que la première couche adhère correctement et que 
+                                            le filament est bien extrudé.</li>
+                                        <li>Signes d'alerte : </li>
+                                        <ul>
+                                            <li>Filament qui ne colle pas (warping).</li>
+                                            <li>Buse trop haute ou trop basse (couche écrasée ou décollée).</li>
+                                            <li>Extrusion irrégulière (manque de matière, "spaghetti").</li>
+                                        </ul>
+                                    </ul>
+                                    <br>Ajustements en cours d'impression:<br>
+                                    <ul>
+                                        <li>Si la première couche ne semble pas optimale, vous pouvez ajuster la hauteur de la buse (Z-offset) en temps réel via 
+                                            l'écran.</li>
+                                    </ul>
+
+                                <h4><li>Surveillance régulière</li></h4>
+                                    <br>Pendant l'impression:<br>
+                                    <ul>
+                                        <li>Vérifiez périodiquement (toutes les 30 min à 1 heure) que tout se déroule normalement, surtout pour les longues impressions.</li>
+                                        <li>Problèmes courants:</li>
+                                        <ul>
+                                            <li>Décollement: ajoutez de la colle ou une bordure via Bambu Studio.</li>
+                                            <li>Buse bouchée: nettoyez-la avec une aiguille en laiton (à chaud) ou lancez une purge.</li>
+                                            <li>Bobine vide: remplacez-la rapidement pour éviter une interruption.</li>
+                                        </ul>
+                                    </ul>
+                                    <br>Fin d'impression:<br>
+                                    <ul>
+                                        <li>Laissez le plateau refroidir avant de retirer la pièce pour éviter les déformations.</li>
+                                        <li>Décrocher le plateau magnétique puis le plier légèrement peut permettre un décollement de la pièce plus simple.</li>
+                                    </ul>
+                            </ol>
                         </p>
                     </section>
+                    <hr>
                     <section id="posttraitement">
                         <h3>Post-traitement</h3>
-                        <p>
-                            <todo>Insérer la suite</todo>
-                        </p>
+                        <strong>Attendre la fin de l'impression</strong>
+                        <ul>
+                            <li>Laisser la pièce refroidir 10-30min sur le plateau pour éviter les déformations,
+                                surtout avec l'ABS ou le PETG</li>
+                        </ul>
+                        <br>
+                        <strong>Retirer les supports et bordures</strong>
+                        <ul>
+                            <li>Sur plateau en PEI texturé (par défaut) <em>NE PAS UTILISER DE SPATULE EN METAL </em>
+                                à risque d'abimer le plateau. Utiliser des pinces coupantes pour enlever supports
+                                et bordures. Il est également possible de les enlever à la main pour les plus "simples".</li>
+                            <li>Sur un plateau en verre, utiliser une spatule pour décoller la pièce, puis des pinces
+                                coupantes pour enlever supports et bordures.</li>
+                        </ul>
+                        <br>
+                        <strong>Ébavurer</strong>
+                        <ul>
+                            <li>Retirer les bavures avec un cutter ou une lime fine, en travaillant dans le sens des
+                                couches. ATTENTIOn, l'utilisation d'un cutter se fait avec des gants de protection.</li>
+                        </ul>
+                        <br>
+                        <strong>Poncer (si nécessaire)</strong>
+                        <ul>
+                            <li>Poncer avec du papier de verre (grain 120 à 2000) pour lisser les surfaces.</li>
+                        </ul>
+                        <br>
+                        <strong>Fintitions optionnelles</strong>
+                        <ul>
+                            <li>Peinture: Appliquer une sous-couche avant la peinture.</li>
+                            <li>Polissage: Utiliser un produit de polissage pour un rendu brillant.</li>
+                        </ul>
                     </section>
                 </section>
+                <hr>
                 <section id="autresfilaments">
                     <h2>Impressions avec d'autres filaments</h2>
                     <section id="LW-PLA2">
@@ -499,7 +860,16 @@
                             en fonction du résultat souhaité (focus sur la légèreté OU la solidité). Il est donc nécessaire de créer un 
                             nouveau réglage de filament. Nous conseillons pour cela de modifier le préréglage du PLA Aéro de BambuLab.<br><br>
                             Ci-dessous de bons paramètres pour imprimer le LwPLA avec une masse volumique de 50% de celle du PLA :<br>
-                            <todo>Insérer images</todo><br>
+
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/LWPLA parameters/1.png" alt="parametres LWPLA BambuStudio" style="width: 50%">
+                                <img src="../images/3d printing/LWPLA parameters/2.png" style="width: 80%">
+                                <img src="../images/3d printing/LWPLA parameters/3.png" style="width: 50%">
+                                <img src="../images/3d printing/LWPLA parameters/4.png" style="width: 80%">
+                                <img src="../images/3d printing/LWPLA parameters/5.png" style="width: 50%">
+                            </figure>
+                        <p>
                         </p>
                     </section>
                     <section id="ABS/ASA2">
@@ -512,7 +882,6 @@
                                     de vapeurs désagréables/toxiques.</li>
                                 <li>Utilisation de colle pour prévenir le Wraping</li>
                             </ul>
-                           <todo>Insérer images</todo><br>
                         </p>
                     </section>
                     <section id="TPU2">
@@ -524,11 +893,200 @@
                             une pièce particulièrement déformable, nous conseillons de ne pas dépasser 2 parois et 5% de remplissage. <br>
                             <em>ATTENTION : le TPU est particulièrement résistant du fait de son élasticité, inutile donc d'augmenter à l'excès 
                             le nombre de parois et le remplissage pour augmenter la résistance de la pièce.</em>
-
-                            <br>
-                            <todo>Insérer images</todo><br>
                         </p>
                     </section>
+                </section>
+                <hr>
+                <section id="AMS">
+                    <h2>AMS - Automated Material System</h2>
+                    <p>
+                        Certaines imprimantes permettent d'utiliser plusieurs filaments sur la même impression. Il existe deux technologies:
+                    <ul>
+                        <li>Les imprimantes qui rétractent le fil précédemment utilisé et pousse le nouveau vers la buse d'impression (type AMS chez BambuLab)</li>
+                        <li>Les imprimantes ayant plusieurs buses/têtes d'impression (type Anycubic U1).</li>
+                    </ul>
+                        Nous allons nous attarder sur la première catégorie.
+                        <br><br>
+                        Il y a ici également plusieurs voies, pour indiquer les différentes couleurs de la pièce. <br>
+                    </p>
+                    <ul>
+                        <li>Vous importez une pièce et décidez de la colorier dans le slicer (ex : Bambu Studio), vous devez alors être connecté à l'imprimante dotée 
+                            d'un système AMS, en sélectionnant la pièce vous devez cliquer sur "peinture couleur"
+                            <figure>
+                                <img src="../images/3d printing/AMS/1.png" alt="interface bambustudio" style="width: 95%">
+                            </figure>
+                            En sélectionnant le cercle, vous pouvez « peindre » librement votre objet, cela peut être utile pour peindre des détails sur une figurine 
+                            par exemple. Vous pouvez sinon également choisir de peindre par couche, la couche entière sera alors de la couleur choisie. Il faudra pour 
+                            cela choisir plage de hauteur.
+                            <figure>
+                                <img src="../images/3d printing/AMS/2.png" alt="interface bambustudio" style="width: 90%">
+                            </figure>
+                        </li>
+                        <li>
+                            La seconde méthode est de créer plusieurs corps volumiques dans votre logiciel de modélisation 3D. Importez ensuite tous les fichiers .stl 
+                            en simultané.
+                            <figure>
+                                <img src="../images/3d printing/AMS/3.png" alt="interface bambustudio" style="width: 60%">
+                                <figcaption><em>CLIQUEZ SUR OUI</em></figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                    <p>
+                        Vous pourrez ensuite choisir quel filament utiliser pour quelles pièces. Cela est particulièrement utile pour écrire en couleur ou mettre des 
+                        logos dans des pièces. <br>
+                        Il faudra alors aller dans « Traiter » à gauche de votre écran, sélectionner objets, et choisir la bonne bobine pour chaque objet. 
+                    </p>
+                        <figure>
+                            <img src="../images/3d printing/AMS/4.png" alt="interface bambustudio" style="width: 60%">
+                        </figure>
+                    <p>
+                        Les bobines sont changeables via l'application Bambu Studio. Il n'est pas possible d'imprimer en multi-filament depuis une carte SD, uniquement 
+                        en WIFI. Le multi filament ne fonctionne pas pour le TPU en système AMD, le changement de filament dans la buse étant trop "rapide", il étire ce 
+                        type de plastique. Il n"y a pas de contre-indication à l"utilisation de TPU pour les imprimantes multi-têtes. 
+                    </p>
+                </section>
+                <hr>
+                <section id="BonnesPratiques">
+                    <h2>Bonnes pratiques & sécurité</h2>
+                    <ul>
+                        <li>Vérifiez toujours la température de la buse et du plateau avant toute manipulation.</li>
+                        <li>En cas de doute ou de difficulté, demandez de l'aide plutôt que d'improviser afin d'éviter d'endommager la machine ou de compromettre l'impression.</li>
+                        <li>Après chaque impression, jetez systématiquement les chutes et déchets de filament dans une poubelle pour maintenir l'espace de travail propre.</li>
+                        <li>Pensez à retirer le filament de l'imprimante une fois votre impression terminée afin d'éviter qu'un autre utilisateur ne l'utilise par inadvertance, 
+                            en particulier sur les imprimantes partagées. </li>
+                        <li>Si une imprimante est en panne ou présente un dysfonctionnement, prévenez immédiatement les responsables et apposez une affiche indiquant qu'elle est 
+                            hors service pour empêcher son utilisation.</li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="Depannage">
+                    <h2>Dépannage</h2>
+                    <section id="Warping">
+                        <h3>Warping</h3>
+                        <p>
+                            Lors de l'impression de pièces en longueur, il n'est pas rare de voir apparaître du “warping”. Longitudinalement, la pièce tend à se décoller d'un côté
+                            et à se tordre très légèrement. Ceci est dû à une répartition non uniforme de la température sur la pièce en cours d'impression. Certaines zones se 
+                            retrouvent plus dilatées que d'autres et engendrent une déformation. En général, ce décollement est bénin et n'engendre pas de décollement plus violent 
+                            lors de l'impression cependant, cela peut tout de même arriver. Il est néanmoins important de prendre en compte ce warping selon l'utilisation de la 
+                            pièce en particulier pour une pièce fonctionnelle. Ce problème touche plus particulièrement les impressions en ABS mais également en PLA. Pour le 
+                            réduire, vous pouvez augmenter l'adhérence au plateau en ajoutant de la colle en stick sur le plateau en PEI texturé ou de la laque sur du verre. Vous 
+                            pouvez également opter pour une imprimante à enceinte fermée ou tout simplement vous assurer que votre imprimante n'est pas face à une fenêtre en plein 
+                            hiver au hasard. Sur le slicer, vous pouvez également réduire la vitesse d'impression. Vous pouvez directement opter pour un filament de meilleure qualité. 
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/warping.png" style="width: 60%">
+                            </figure>
+                    </section>
+                    <section id="Decollement">
+                        <h3>Décollement</h3>
+                        <p>
+                            Le décollement est comme un warping++. Lors de l'impression, la pièce manque d'adhérence et se laisse balader par la buse d'impression. Celle-ci finit 
+                            décollée et part se loger on ne sait où. L'imprimante continue d'imprimer dans le vide comme si de rien n'était et laisse place à un magnifique spaghetti 
+                            qui finira directement à la poubelle. De la même manière que le warping, un décollement s'évite en augmentant l'adhérence au plateau. Vous pouvez donc 
+                            réaliser les mêmes consignes que dans le paragraphe précédent. Vous pouvez également ajouter des bordures au pied de vos pièces.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/spaghetti.png" style="width: 50%; height: 500px; object-fit: cover;">
+                            </figure>
+                    </section>
+                    <section id="BuseBouchee">
+                        <h3>Buse Bouchée</h3>
+                        <p>
+                            L'un des problèmes les plus embêtants en impression 3D est la buse bouchée. Lorsque vous lancez une impression, l'imprimante chauffe le filament afin 
+                            de le faire fondre. Selon sa composition, chaque matériau nécessite une température de fusion adaptée. Imaginons que, dans votre slicer, vous ayez 
+                            sélectionné le mauvais filament et que la buse ne chauffe pas suffisamment : elle peut alors parfois se boucher. Par exemple, si vous imprimez en 
+                            ASA alors que le profil sélectionné dans le slicer est celui du PLA.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/buse.png" alt="buse détaillée"  style="width: 50%">
+                            </figure>
+                        <p>
+                            Le filament d'ASA arrive alors dans la tête d'impression et chauffe uniquement à la température prévue pour le PLA. Le système pousse ce filament 
+                            insuffisamment fondu vers la buse en essayant de l'extruder, mais celui-ci peut devenir trop visqueux, s'accumuler dans la hotend et parfois former 
+                            un bouchon. Résultat : la tête d'impression continue de se déplacer, mais peu ou aucun filament ne sort de la buse.<br><br>
+                            La première solution reste bien entendu de vérifier que le bon filament est sélectionné dans le slicer avant de lancer l'impression. Lorsque le bouchage 
+                            est déjà présent, il est parfois nécessaire de procéder à un nettoyage ou à un démontage partiel de la tête d'impression afin d'accéder au système 
+                            d'extrusion et retirer le filament bloqué.<br><br>
+                            Cette manipulation peut être technique et ne doit pas être réalisée sans précaution, au risque d'endommager certaines pièces de l'imprimante. Si vous 
+                            n'êtes pas à l'aise avec cette procédure, nous vous conseillons de contacter une personne plus expérimentée (groupe Fablab ou SiERA). Si le problème 
+                            survient sur votre imprimante personnelle, nous vous souhaitons bon courage.
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/buse demontee.jpg" style="width: 50%">
+                            </figure>
+                    </section>
+                    <section id="Arret">
+                        <h3>Arrêt de l'impression</h3>
+                        <p>
+                            Si l'imprimante arrête votre impression sans raison apparente, pas de stress : plusieurs causes sont possibles. L'une des plus courantes est une bobine 
+                            de filament vide. Dans ce cas, remplacez-la par une nouvelle et reprenez l'impression si l'imprimante le permet. Une légère marque ou ligne peut parfois 
+                            apparaître sur la pièce finale au niveau de la pause.
+                            <br><br>
+                            Un arrêt peut également être provoqué par un bug logiciel, une erreur de lecture de la carte mémoire, une mise en sécurité de l'imprimante ou un problème 
+                            électrique temporaire. Dans certains cas, il suffit de redémarrer l'imprimante manuellement. L'interrupteur d'alimentation se trouve généralement à 
+                            l'arrière de la machine : éteignez-la, attendez quelques secondes, puis rallumez-la avant de relancer l'impression.
+                            <br><br>
+                            Après redémarrage, vérifiez que le problème initial a disparu avant de reprendre l'utilisation normale.
+                            <br><br>
+                            Si les arrêts se répètent régulièrement, signalez-le afin qu'un diagnostic plus approfondi puisse être réalisé.
+                        </p>
+                    </section>
+                    <section id="Noeud">
+                        <h3>Bobine Emmêlée</h3>
+                        <p>
+                            L'imprimante peut également s'arrêter d'imprimer si votre bobine est emmêlée et l'imprimante n'arrive plus à la dérouler. Auquel cas, déroulez votre 
+                            bobine manuellement jusqu'au nœud et réenroulez-là proprement en gardant le filament tiré. Certains fournisseurs de filaments livrent des bobines 
+                            emmêlées (pas de bol), auquel cas, changez de fournisseur ou bien perdez 30min à tout dérouler et enrouler vous et votre meilleur pote. 
+                            <br><br>
+                            Lorsque vous retirez une bobine d'une imprimante, peu importe que ce soit la vôtre ou non, prenez soin de la maintenir sérré et de bloquer le bout du 
+                            filament dans les trous de la bobine prévus à cet effet. Vous pouvez faire un aller-retour entre deux trous si cela lui permet de ne pas se détacher. 
+                        </p>
+                            <figure>
+                                <img src="../images/3d printing/noeud bobine.png" style="width: 35%">
+                            </figure>
+                    </section>
+                    <section id="Stringing">
+                        <h3>Stringing</h3>
+                        <p>
+                            Le stringing (ou “filage”) est un défaut d'impression 3D qui se manifeste par l'apparition de fins fils de plastique entre différentes parties d'une pièce, 
+                            donnant un aspect de toile d'araignée. Ce phénomène se produit lorsque du filament continue à s'écouler de la buse pendant les déplacements à vide de la tête 
+                            d'impression. Il est souvent causé par une température d'extrusion trop élevée, une rétraction insuffisante ou mal réglée, une vitesse de déplacement trop 
+                            faible, ou encore un filament humide. Bien que généralement uniquement esthétique, le stringing peut parfois nuire à la finition de la pièce et nécessite 
+                            alors un ajustement des paramètres d'impression pour être réduit.
+                            <br><br>
+                            À l'inverse, lors de l'impression en LW-PLA (ou PLA Aero), le stringing est un phénomène complètement normal. Ce matériau expansif est conçu pour mousser 
+                            légèrement lorsqu'il est chauffé, ce qui modifie son comportement à l'extrusion et le rend naturellement plus sujet à la formation de fils entre les 
+                            déplacements de la buse. Un certain niveau de stringing est donc attendu avec ce type de filament et ne signifie pas nécessairement qu'un réglage est 
+                            incorrect. Il peut toutefois être limité en optimisant les paramètres d'impression, mais il reste généralement plus présent qu'avec un PLA standard.
+                        </p>
+                    </section>
+                </section>
+                <hr>
+                <section id="ChangerFilament">
+                    <h2>Changer le filament</h2>
+                    <p>
+                        Selon votre imprimante, la méthode pour changer de filament peut énormément varier. Sur Ender3 par exemple, vous devez renseigner la température de fusion 
+                        de votre filament manuellement. Sur les imprimantes BambuLab, la manipulation est simple. Nous vous renvoyons directement à la section explication du 
+                        lancement d'une impression simple. La manipulation y est détaillée.
+                    </p>
+                </section>
+                <hr>
+                <section id="Conclusion">
+                    <h2>Conclusion</h2>
+                    <p>
+                        L'objectif de ce document est de vous fournir les bases nécessaires pour utiliser une imprimante 3D de manière autonome, efficace et sécurisée. Comme toute 
+                        machine de fabrication, une imprimante 3D demande de la rigueur, de la préparation et un minimum de compréhension technique pour obtenir des résultats fiables.
+                        <br><br>
+                        La majorité des problèmes rencontrés en impression 3D provient d'erreurs simples : mauvais réglages, préparation insuffisante, ou manque de vigilance lors 
+                        du lancement de l'impression. En appliquant les bonnes pratiques présentées dans ce guide, vous réduirez fortement le risque d'échec, de perte de matériau 
+                        ou de détérioration du matériel.
+                        <br><br>
+                        <br><br>
+                        Ce document a été réalisé en commun avec <em>SiERA</em>, association étudiante, lorsque j'en fût partie. La plupart des photos utilisées dans ce document sont de réels 
+                        cas pris à l'ESTACA. CL'objectif de ce document est d'éviter qu'ils se reproduisent. Ne soyez pas débiles et bon courage !
+                        <br><br>
+                        En cas de question relative à ce document ou à l'utilisation des imprimantes, passez par la page Contact.
+                    </p>
                 </section>
         </article>
     </main>

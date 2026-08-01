@@ -447,9 +447,10 @@ code{
 ========================= */
 
 hr{
-    margin:50px 0;
+    margin:15px 0;
     border:none;
     border-top:1px solid var(--border);
+    border-color:#444452
 }
 
 /* =========================
