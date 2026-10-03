@@ -17,3 +17,5 @@ Todo:
 - Contacter sources
 - add github / Linkedin footer ? ou header ?
     - logo + nom de la plateforme
+- réduire poids images
+- fix version mobile

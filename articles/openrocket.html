@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="darkreader-lock">
 
     <title>Apollon - OpenRocket</title>
 
@@ -17,6 +18,10 @@
 
 <body>
     <header>
+        <button class="burger">
+            ☰
+        </button>
+
         <a href = "../index.html" class="logo">
             Apollon
         </a>
@@ -26,13 +31,47 @@
         </nav>
     </header>
 
+    <aside class="sidebar">
+        <nav class="sommaire">
+            <h2>Sommaire</h2>
+            <ul>
+                <li>
+                    <a href="#definition">C'est quoi?</a>
+                </li>
+                <li>
+                    <a href="#modélisation">Projet fusée</a>
+                </li>
+                <li>
+                    <a href="#configurations">Configurations</a>
+                </li>
+                <li>
+                    <a href="#simulations">Simulations de vol</a>
+                </li>
+                <li>
+                    <a href="#fabrication">Fabrication</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
     <footer>
         <p>© 2026</p>
         <p>Charlize CARON</p>
     </footer>
 
+    <script>
+    const burger = document.querySelector(".burger");
+    const sidebar = document.querySelector(".sidebar");
+
+
+    burger.addEventListener("click", () => {
+
+        sidebar.classList.toggle("active");
+
+    });
+    </script>
     <script src="../js/topography-background.js"></script>
+
 </body>
 
 </html>
