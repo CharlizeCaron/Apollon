@@ -242,7 +242,8 @@
             vec2 pos22 = vec2(-0.50, -0.10) + vec2(sin(t * 0.16 + 1.1), cos(t * 0.19)) * 0.11;
             dots += drawPoint(vUv, pos22, aspect, uResolution, sin(t * 0.24 + 1.6) * 0.5 + 0.5);
 
-            float allDots = clamp(dots, 0.0, 1.0);
+            // float allDots = clamp(dots, 0.0, 1.0);
+            float allDots = 0.0;
 
             vec3 bg = vec3(3.0 / 255.0, 3.0 / 255.0, 7.0 / 255.0);
             vec3 valley = vec3(0.012, 0.014, 0.028);
